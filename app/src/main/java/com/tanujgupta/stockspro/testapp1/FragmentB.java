@@ -23,6 +23,7 @@ public class FragmentB extends Fragment {
         textView = (TextView) getActivity().findViewById(R.id.tv_details);
     }
 
+    // method called when an item is clicked on the listview  to change background color of details textview below
     public void setLayoutColor(String list_item) {
 
         int color;

@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-/**
- * Created by Tanuj on 07/03/15.
- */
 public class FragmentA extends ListFragment implements AdapterView.OnItemClickListener{
+
+    Communicator communicator;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,6 +28,8 @@ public class FragmentA extends ListFragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        communicator = (Communicator) getActivity();
+        communicator.respond(getListView().getItemAtPosition(position).toString());
 
     }
 }

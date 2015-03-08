@@ -1,12 +1,11 @@
 package com.tanujgupta.stockspro.testapp1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
-public class MyActivity extends Activity {
+public class MyActivity extends Activity implements Communicator {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +13,13 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
     }
 
+    @Override
+    public void respond(String list_item) {
 
+        Intent intent  = new Intent();
+        intent.setClass(this, ActivityB.class);
+        intent.putExtra("index", list_item);
+        startActivity(intent);
 
+    }
 }
